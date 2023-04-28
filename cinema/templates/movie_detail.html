@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST">
+{% csrf_token %}
+<p>{{ movie.name }}</p>
+<p>{{ movie.year }}</p>
+<p>{{ movie.genre.name }}</p>
+<p>{{ movie.description }}</p>
+<p>{{ genre.country }}</p>
+<p>{{ genre.image }}</p>
+<p>{{ genre.video }}</p>
+</form>
+
+{% endblock content %}
