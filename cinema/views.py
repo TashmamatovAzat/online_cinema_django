@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView
 
 from .models import Genre, Movie
 
@@ -29,4 +28,3 @@ class MovieDetailView(DetailView):
     template_name = 'movie_detail.html'
     context_object_name = 'movie'
     pk_url_kwarg = 'movie_id'
-

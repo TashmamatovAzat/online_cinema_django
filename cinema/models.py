@@ -18,8 +18,8 @@ class Movie(models.Model):
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     description = models.TextField(verbose_name='Описание фильма')
     country = models.CharField(max_length=100, verbose_name='Страна выпуска фильма')
-    image = models.ImageField(verbose_name='Главная картинка')
-    video = models.FileField(verbose_name='Видео')
+    image = models.ImageField(upload_to = 'images/', verbose_name='Главная картинка', max_length=250)
+    video = models.FileField(upload_to = 'videos/', verbose_name='Видео')
 
     class Meta:
         verbose_name = "Фильм"

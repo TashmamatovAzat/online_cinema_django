@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% for movie in movies %}
+<div class="card" style="width: 18rem;">
+  <img src="{{ movie.image.url }}" class="card-img-top" alt="{{movie.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{ movie.name }}</h5>
+    <p class="card-text">{{ movie.description }}</p>
+    <a href= "{% url 'movie_detail' movie.id %}" class="btn btn-primary">Смотреть</a>
+  </div>
+</div>
 
-<ul>
-    {% for movie in movies %}
-    <li><a href="{% url 'movie_detail' movie.id %}">{{ movie.name }}</a></li>
     {% endfor %}
-</ul>
+
 
 {% endblock content %}
